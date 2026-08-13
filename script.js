@@ -97,18 +97,46 @@
                 }
             });
             
-            // Handle form submit just to prevent reload for now
+            // Handle form submit to send data to Supabase
             const form = document.getElementById('projectForm');
             if (form) {
-                form.addEventListener('submit', (e) => {
+                form.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    // Ideally send data here
                     
-                    // Show some visual feedback like changing button text
                     const submitBtn = form.querySelector('.btn-submit');
                     const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Отправлено!';
-                    submitBtn.style.background = 'var(--accent-dim)';
+                    submitBtn.textContent = 'Отправка...';
+                    submitBtn.style.pointerEvents = 'none';
+
+                    const name = document.getElementById('f-name').value;
+                    const contact = document.getElementById('f-contact').value;
+                    const type = document.getElementById('f-type').value;
+                    const budget = document.getElementById('f-budget').value;
+                    const description = document.getElementById('f-desc').value;
+                    
+                    if (window.supabaseClient) {
+                        const { error } = await window.supabaseClient.from('leads').insert([{
+                            name: name,
+                            contact: contact,
+                            type: type,
+                            budget: budget,
+                            description: description,
+                            stage: 'new',
+                            notes: []
+                        }]);
+
+                        if (error) {
+                            console.error('Ошибка отправки:', error);
+                            submitBtn.textContent = 'Ошибка';
+                            submitBtn.style.background = '#ff5e5e';
+                        } else {
+                            submitBtn.textContent = 'Отправлено!';
+                            submitBtn.style.background = 'var(--accent-dim)';
+                        }
+                    } else {
+                        submitBtn.textContent = 'Отправлено!';
+                        submitBtn.style.background = 'var(--accent-dim)';
+                    }
                     
                     setTimeout(() => {
                         closeModal();
@@ -116,6 +144,7 @@
                             form.reset();
                             submitBtn.textContent = originalText;
                             submitBtn.style.background = '';
+                            submitBtn.style.pointerEvents = 'auto';
                         }, 300);
                     }, 1500);
                 });
