@@ -24,7 +24,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ivasovc8.beget.tech/public_html/
+          server-dir: levcode.ru/public_html/
           exclude: |
             **/.git*
             **/.git*/**
