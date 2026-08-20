@@ -1,27 +1,32 @@
-name: Deploy to Beget FTP
+name: 🚀 Deploy to Beget Hosting
 
 on:
   push:
     branches:
       - master
       - main
+  workflow_dispatch: # Позволяет запускать деплой вручную кнопкой в GitHub Actions
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
+    name: 🎉 Sync files to Beget
     runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ivasovc8.beget.tech/public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 📂 Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ivasovc8.beget.tech/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            README.md
