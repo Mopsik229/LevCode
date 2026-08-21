@@ -114,28 +114,72 @@
                     const budget = document.getElementById('f-budget').value;
                     const description = document.getElementById('f-desc').value;
                     
-                    if (window.supabaseClient) {
-                        const { error } = await window.supabaseClient.from('leads').insert([{
-                            name: name,
-                            contact: contact,
-                            type: type,
-                            budget: budget,
-                            description: description,
-                            stage: 'new',
-                            notes: []
-                        }]);
+                    let isSuccess = false;
+                    try {
+                        // 1. Отправляем через надежный серверный PHP-обработчик на Beget (обход блокировок Supabase в РФ)
+                        const response = await fetch('api/send-lead.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                contact: contact,
+                                type: type,
+                                budget: budget,
+                                description: description
+                            })
+                        });
 
-                        if (error) {
-                            console.error('Ошибка отправки:', error);
-                            submitBtn.textContent = 'Ошибка';
-                            submitBtn.style.background = '#ff5e5e';
+                        const result = await response.json().catch(() => ({}));
+
+                        if (response.ok && result.success) {
+                            isSuccess = true;
                         } else {
-                            submitBtn.textContent = 'Отправлено!';
-                            submitBtn.style.background = 'var(--accent-dim)';
+                            // 2. Fallback на прямой Supabase SDK, если PHP недоступен (например при локальном просмотре)
+                            if (window.supabaseClient) {
+                                const { error } = await window.supabaseClient.from('leads').insert([{
+                                    name: name,
+                                    contact: contact,
+                                    type: type,
+                                    budget: budget,
+                                    description: description,
+                                    stage: 'new',
+                                    notes: []
+                                }]);
+                                if (!error) {
+                                    isSuccess = true;
+                                } else {
+                                    console.error('Ошибка отправки через Supabase SDK:', error);
+                                }
+                            }
                         }
-                    } else {
+                    } catch (err) {
+                        console.warn('Серверный API недоступен, пробуем напрямую:', err);
+                        if (window.supabaseClient) {
+                            try {
+                                const { error } = await window.supabaseClient.from('leads').insert([{
+                                    name: name,
+                                    contact: contact,
+                                    type: type,
+                                    budget: budget,
+                                    description: description,
+                                    stage: 'new',
+                                    notes: []
+                                }]);
+                                if (!error) isSuccess = true;
+                            } catch (e) {
+                                console.error('Ошибка отправки:', e);
+                            }
+                        }
+                    }
+
+                    if (isSuccess) {
                         submitBtn.textContent = 'Отправлено!';
                         submitBtn.style.background = 'var(--accent-dim)';
+                    } else {
+                        submitBtn.textContent = 'Ошибка';
+                        submitBtn.style.background = '#ff5e5e';
                     }
                     
                     setTimeout(() => {
