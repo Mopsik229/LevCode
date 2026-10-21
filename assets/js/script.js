@@ -254,6 +254,34 @@
                 isSuccess = false;
             }
 
+            if (!isSuccess) {
+                try {
+                    const fallbackRes = await fetch('https://vqyzzctjymrnymhwwtry.supabase.co/rest/v1/leads', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxeXp6Y3RqeW1ybnltaHd3dHJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzNjYxNDQsImV4cCI6MjEwMTk0MjE0NH0.ItuTXt1OIJSyIm5qLMzUmAxTJCsgwvubaZKx17-n2dE',
+                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxeXp6Y3RqeW1ybnltaHd3dHJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzNjYxNDQsImV4cCI6MjEwMTk0MjE0NH0.ItuTXt1OIJSyIm5qLMzUmAxTJCsgwvubaZKx17-n2dE',
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify([{
+                            name: payload.name,
+                            contact: payload.contact,
+                            type: payload.type,
+                            budget: payload.budget,
+                            description: payload.description,
+                            stage: 'new',
+                            notes: []
+                        }])
+                    });
+                    if (fallbackRes.status >= 200 && fallbackRes.status < 300) {
+                        isSuccess = true;
+                    }
+                } catch (fallbackErr) {
+                    isSuccess = false;
+                }
+            }
+
             if (isSuccess) {
                 if (typeof ym === 'function') {
                     ym(111801512, 'reachGoal', 'lead_form_success');

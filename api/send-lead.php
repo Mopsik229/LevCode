@@ -29,11 +29,11 @@ if (!empty($input['website'])) {
     exit;
 }
 
-$name = trim($input['name'] ?? '');
-$contact = trim($input['contact'] ?? '');
-$type = trim($input['type'] ?? '');
-$budget = trim($input['budget'] ?? '');
-$description = trim($input['description'] ?? '');
+$name = isset($input['name']) ? trim($input['name']) : '';
+$contact = isset($input['contact']) ? trim($input['contact']) : '';
+$type = isset($input['type']) ? trim($input['type']) : '';
+$budget = isset($input['budget']) ? trim($input['budget']) : '';
+$description = isset($input['description']) ? trim($input['description']) : '';
 
 if (empty($contact)) {
     http_response_code(400);
@@ -41,8 +41,11 @@ if (empty($contact)) {
     exit;
 }
 
-$supabaseUrl = getenv('SUPABASE_URL') ?: 'https://vqyzzctjymrnymhwwtry.supabase.co/rest/v1/leads';
-$supabaseKey = getenv('SUPABASE_KEY') ?: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxeXp6Y3RqeW1ybnltaHd3dHJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzNjYxNDQsImV4cCI6MjEwMTk0MjE0NH0.ItuTXt1OIJSyIm5qLMzUmAxTJCsgwvubaZKx17-n2dE';
+$envUrl = getenv('SUPABASE_URL');
+$supabaseUrl = $envUrl ? $envUrl : 'https://vqyzzctjymrnymhwwtry.supabase.co/rest/v1/leads';
+
+$envKey = getenv('SUPABASE_KEY');
+$supabaseKey = $envKey ? $envKey : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxeXp6Y3RqeW1ybnltaHd3dHJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzNjYxNDQsImV4cCI6MjEwMTk0MjE0NH0.ItuTXt1OIJSyIm5qLMzUmAxTJCsgwvubaZKx17-n2dE';
 
 $leadData = [
     'name' => $name,
