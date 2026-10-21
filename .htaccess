@@ -1,48 +1,18 @@
-Options -Indexes
+AddType text/css .css
+AddType application/javascript .js
+AddType font/woff2 .woff2
+AddType image/avif .avif
+AddType image/svg+xml .svg
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    RewriteRule (^|/)\. - [F,L]
-
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
-    RewriteRule ^index\.html$ / [R=301,L]
-
     RewriteCond %{HTTP_HOST} ^www\.levcode\.ru$ [NC]
     RewriteRule ^(.*)$ https://levcode.ru/$1 [R=301,L]
+
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
+    RewriteRule ^index\.html$ https://levcode.ru/ [R=301,L]
 </IfModule>
 
 ErrorDocument 404 /404.html
-
-<FilesMatch "^\.">
-    <IfModule mod_authz_core.c>
-        Require all denied
-    </IfModule>
-    <IfModule !mod_authz_core.c>
-        Order allow,deny
-        Deny from all
-    </IfModule>
-</FilesMatch>
-
-ServerSignature Off
-
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-</IfModule>
-
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
-</IfModule>
-
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType image/avif "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType font/woff2 "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-</IfModule>
