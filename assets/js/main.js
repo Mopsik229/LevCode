@@ -155,8 +155,11 @@
     const modal = document.getElementById('projectModal');
     const modalClose = document.querySelector('.modal-close');
 
+    let openModal = () => {};
+    let closeModal = () => {};
+
     if (modal) {
-        const openModal = () => {
+        openModal = () => {
             modal.classList.add('is-open');
             document.body.style.overflow = 'hidden';
             if (lenis) lenis.stop();
@@ -166,7 +169,7 @@
             }
         };
 
-        const closeModal = () => {
+        closeModal = () => {
             modal.classList.remove('is-open');
             document.body.style.overflow = '';
             if (lenis) lenis.start();
@@ -228,11 +231,11 @@
             submitBtn.style.pointerEvents = 'none';
 
             const payload = {
-                name: document.getElementById('f-name').value,
-                contact: document.getElementById('f-contact').value,
-                type: document.getElementById('f-type').value,
-                budget: document.getElementById('f-budget').value,
-                description: document.getElementById('f-desc').value
+                name: document.getElementById('f-name')?.value?.trim() || '',
+                contact: document.getElementById('f-contact')?.value?.trim() || '',
+                type: document.getElementById('f-type')?.value || '',
+                budget: document.getElementById('f-budget')?.value || '',
+                description: document.getElementById('f-desc')?.value?.trim() || ''
             };
 
             let isSuccess = false;
@@ -266,9 +269,11 @@
                 closeModal();
                 setTimeout(() => {
                     form.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.pointerEvents = 'auto';
+                    if (submitBtn) {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.pointerEvents = 'auto';
+                    }
                 }, 300);
             }, 1500);
         });
