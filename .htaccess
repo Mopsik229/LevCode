@@ -1,4 +1,3 @@
-
 Options -Indexes
 
 <IfModule mod_rewrite.c>
@@ -7,13 +6,14 @@ Options -Indexes
 
     RewriteRule (^|/)\. - [F,L]
 
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.html\ HTTP/ [NC]
-    RewriteRule ^(.*)index\.html$ https://levcode.ru/$1 [R=301,L]
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
+    RewriteRule ^index\.html$ https://levcode.ru/ [R=301,L]
 
     RewriteCond %{HTTP_HOST} ^www\.levcode\.ru$ [NC]
     RewriteRule ^(.*)$ https://levcode.ru/$1 [R=301,L]
 
-    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTP:CF-Visitor} !'"scheme":"https"'
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
