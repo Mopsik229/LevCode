@@ -1,5 +1,4 @@
-// We assume `ogl` is loaded globally via UMD from CDN (window.ogl)
-const { Renderer, Program, Triangle, Mesh } = window.ogl;
+const { Renderer, Program, Triangle, Mesh } = window.ogl || {};
 
 const hexToRgb = hex => {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -19,17 +18,16 @@ class SideRays {
   constructor(container, options = {}) {
     this.container = container;
 
-    // Default options
     this.speed = options.speed ?? 2.5;
-    this.rayColor1 = options.rayColor1 ?? '#4e9eff'; // Brand accent color
-    this.rayColor2 = options.rayColor2 ?? '#1a5ab3'; // Darker/richer blue for contrast
-    this.intensity = options.intensity ?? 3.5; // boosted intensity to make it more visible
+    this.rayColor1 = options.rayColor1 ?? '#4e9eff';
+    this.rayColor2 = options.rayColor2 ?? '#1a5ab3';
+    this.intensity = options.intensity ?? 3.5;
     this.spread = options.spread ?? 2;
     this.origin = options.origin ?? 'top-right';
     this.tilt = options.tilt ?? 0;
     this.saturation = options.saturation ?? 1.5;
     this.blend = options.blend ?? 0.75;
-    this.falloff = options.falloff ?? 1.4; // reduced falloff to make rays reach further
+    this.falloff = options.falloff ?? 1.4;
     this.opacity = options.opacity ?? 1.0;
 
     this.renderer = null;
@@ -53,7 +51,7 @@ class SideRays {
           this.stopWebGL();
         }
       },
-      { threshold: 0.05 } // lowered threshold just in case
+      { threshold: 0.05 }
     );
     this.observer.observe(this.container);
   }
@@ -215,16 +213,12 @@ void main() {
   }
 }
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.siderays-bg');
   if (container) {
-    // Adding a slight delay to ensure everything is loaded, including UMD
     setTimeout(() => {
       if (window.ogl) {
         new SideRays(container);
-      } else {
-        console.error("OGL library not found.");
       }
     }, 100);
   }

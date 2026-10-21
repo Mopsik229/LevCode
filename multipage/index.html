@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разработка многостраничных сайтов под ключ от 10 500 ₽ — LevCode</title>
+    <meta name="description"
+        content="Создание корпоративных и многостраничных сайтов для бизнеса под ключ от веб-студии LevCode. Продуманная структура, каталог, блог, вёрстка и SEO от 10 500 ₽.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://levcode.ru/multipage/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://levcode.ru/multipage/">
+    <meta property="og:title" content="Создание корпоративных и многостраничных сайтов от 10 500 ₽ — LevCode">
+    <meta property="og:description"
+        content="Разрабатываем современные многостраничные сайты для бизнеса: масштабируемая структура разделов, каталог, индивидуальный дизайн и SEO-оптимизация.">
+    <meta property="og:image" content="https://levcode.ru/assets/icons/icon-512.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="LevCode">
+
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="120x120" href="../assets/icons/favicon-120x120.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#0a0b0d">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://levcode.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Услуги",
+          "item": "https://levcode.ru/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Многостраничный сайт",
+          "item": "https://levcode.ru/multipage/"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Разработка многостраничных сайтов",
+      "name": "Создание многостраничного корпоративного сайта",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "LevCode",
+        "url": "https://levcode.ru/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Россия"
+      },
+      "description": "Разработка многостраничных корпоративных сайтов для бизнеса под ключ: каталог услуг, структура под поисковое SEO-продвижение, чистый код и адаптивность.",
+      "offers": {
+        "@type": "Offer",
+        "price": "10500",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "url": "https://levcode.ru/multipage/"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько страниц входит в многостраничный сайт?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В базовый тариф входит до 5 страниц (Главная, О компании, Услуги, Кейсы/Отзывы, Контакты). В тарифах «Бизнес» и «Премиум» создаем структуру из 10–25+ страниц с каталогом и блогом."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Поможете ли вы составить правильную структуру страниц для SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, мы изначально проектируем иерархию страниц и URL так, чтобы каждая услуга получила отдельную посадочную страницу для органического трафика из Яндекса и Google."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Смогу ли я сам добавлять новые статьи и услуги?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, мы верстаем код по модульному принципу и передаем понятную инструкцию, либо подключаем легкую панель управления контентом."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Каковы сроки разработки корпоративного сайта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Создание корпоративного сайта занимает от 10 до 20 рабочих дней в зависимости от структуры, объема каталога и интеграций."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=111801512', 'ym');
+
+        ym(111801512, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/111801512" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    
+</head>
+
+<body>
+    <header>
+        <nav class="nav" aria-label="Основная навигация">
+            <a href="../index.html" class="logo"><span>Lev</span><span class="dim">Code</span><span class="bar"></span></a>
+            <div class="nav-links">
+                <a href="../index.html#works">Работы</a>
+                <div class="nav-dropdown">
+                    <a href="../index.html#services">Услуги <span class="nav-dropdown-chevron">▼</span></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../landing/index.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-item-title">Лендинг</span>
+                            <span class="nav-dropdown-item-desc">Одностраничный сайт от 7 500 ₽</span>
+                        </a>
+                        <a href="../multipage/index.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-item-title">Многостраничный сайт</span>
+                            <span class="nav-dropdown-item-desc">Для бизнеса и каталогов от 10 500 ₽</span>
+                        </a>
+                        <a href="../vizitka/index.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-item-title">Сайт-визитка</span>
+                            <span class="nav-dropdown-item-desc">Компактный сайт компании от 7 500 ₽</span>
+                        </a>
+                        <a href="../redesign/index.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-item-title">Редизайн сайта</span>
+                            <span class="nav-dropdown-item-desc">Модернизация UX/UI от 12 000 ₽</span>
+                        </a>
+                        <a href="../verstka/index.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-item-title">Вёрстка из Figma</span>
+                            <span class="nav-dropdown-item-desc">Чистый адаптивный код от 9 000 ₽</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="../index.html#cycle">Процесс</a>
+                <a href="../index.html#stages">Этапы</a>
+                <a href="#tariffs">Тарифы</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="#modal" class="btn btn-primary nav-cta js-open-modal">Обсудить проект</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="service-hero">
+            <div class="siderays-bg"></div>
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="../index.html">Главная</a>
+                <span class="breadcrumbs-sep">/</span>
+                <a href="../index.html#services">Услуги</a>
+                <span class="breadcrumbs-sep">/</span>
+                <span class="breadcrumbs-current">Многостраничный сайт</span>
+            </nav>
+
+            <span class="section-tag mono">Корпоративные сайты · от 10 500 ₽</span>
+            <h1>Создание многостраничных сайтов<br>под ключ для бизнеса</h1>
+            <p class="hero-sub">Разрабатываем надежные и статусные сайты для компаний: продуманная структура разделов под органическое SEO-продвижение, каталог услуг, индивидуальный UX/UI дизайн и чистая адаптивная вёрстка.</p>
+
+            <div class="hero-actions">
+                <a href="#tariffs" class="btn btn-ghost btn-lg">Смотреть тарифы</a>
+                <a href="#modal" class="btn btn-primary btn-lg js-open-modal">Рассчитать проект</a>
+            </div>
+
+            <div class="service-badges">
+                <div class="service-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Срок от 10 дней
+                </div>
+                <div class="service-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Готов к SEO-продвижению
+                </div>
+                <div class="service-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Каталог и структура услуг
+                </div>
+                <div class="service-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Статус и доверие клиентов
+                </div>
+            </div>
+        </section>
+
+        <section id="features" style="min-height: auto; padding: 70px 32px 90px;">
+            <div class="section-head">
+                <div>
+                    <span class="section-tag">Архитектура</span>
+                    <h2>Что входит в разработку многостраничного сайта</h2>
+                </div>
+                <p>Масштабируемое решение, которое решает задачи презентации бизнеса и привлекает поисковый трафик.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Структура под SEO-трафик</h3>
+                    <p class="benefit-desc">Проектируем логическую иерархию разделов и URL: каждая услуга получает посадочную страницу для продвижения в поиске.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Каталог товаров и услуг</h3>
+                    <p class="benefit-desc">Удобное и наглядное представление направлений деятельности компании, подробные карточки с ценами и характеристиками.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Корпоративный UI/UX стиль</h3>
+                    <p class="benefit-desc">Дизайн в Figma, подчеркивающий надежность и масштаб бизнеса. Единая стилистика всех внутренних страниц и разделов.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Быстродействие Core Web Vitals</h3>
+                    <p class="benefit-desc">Оптимизированный код без лишних тормозящих плагинов: моментальный отклик при переходе между страницами.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Триггеры доверия (E-E-A-T)</h3>
+                    <p class="benefit-desc">Разделы «О компании», подробные контакты, реквизиты, сертификаты и отзывы клиентов для доверия поисковиков и покупателей.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Умные формы заявок</h3>
+                    <p class="benefit-desc">Многофункциональные формы расчета стоимости с выбором услуг, автоматической валидацией и отправкой в Telegram.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tariffs" style="min-height: auto; padding: 70px 32px 100px;">
+            <div class="section-head">
+                <div>
+                    <span class="section-tag">Прайс-лист</span>
+                    <h2>Тарифы на многостраничные сайты</h2>
+                </div>
+                <p>Выберите подходящую конфигурацию под размер вашей компании и задачи бизнеса.</p>
+            </div>
+            <div class="tariffs-grid">
+                <div class="tariff-card">
+                    <h3 class="tariff-title">«Базовый»</h3>
+                    <p class="tariff-desc">Идеально для небольшой компании: основные разделы и презентация ключевых услуг.</p>
+                    <div class="tariff-price-wrap">
+                        <div class="tariff-price">от 10 500 ₽</div>
+                        <div class="tariff-time">Срок: от 10 рабочих дней</div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> До 5 уникальных страниц</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Индивидуальный дизайн в Figma</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Адаптивная вёрстка под ПК и мобильные</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Форма обратной связи в Telegram</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Базовая SEO-оптимизация мета-тегов</li>
+                    </ul>
+                    <a href="#modal" class="btn btn-ghost tariff-btn js-open-modal" data-type="multipage" data-budget="7500-15000">Выбрать тариф</a>
+                </div>
+
+                <div class="tariff-card featured">
+                    <span class="tariff-ribbon">Популярный</span>
+                    <h3 class="tariff-title">«Бизнес Каталог»</h3>
+                    <p class="tariff-desc">Полноценный корпоративный сайт с разветвленным каталогом и структурой под продвижение.</p>
+                    <div class="tariff-price-wrap">
+                        <div class="tariff-price">от 18 500 ₽</div>
+                        <div class="tariff-time">Срок: от 14 рабочих дней</div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> До 15 страниц и разделов</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Структурированный каталог услуг/товаров</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Полное техническое SEO (карта сайта, разметка)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Интеграция заявок в CRM и Telegram</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Яндекс.Метрика + цели на каждом шаге</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 30 дней бесплатной техподдержки</li>
+                    </ul>
+                    <a href="#modal" class="btn btn-primary tariff-btn js-open-modal" data-type="multipage" data-budget="15000-30000">Выбрать тариф</a>
+                </div>
+
+                <div class="tariff-card">
+                    <h3 class="tariff-title">«Корпоративный Премиум»</h3>
+                    <p class="tariff-desc">Масштабный проект для лидеров рынка со сложной логикой, интеграциями и блогом.</p>
+                    <div class="tariff-price-wrap">
+                        <div class="tariff-price">от 32 000 ₽</div>
+                        <div class="tariff-time">Срок: от 20 рабочих дней</div>
+                    </div>
+                    <ul class="tariff-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Неограниченное число страниц</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Раздел блога и экспертных статей</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Калькуляторы и интерактивные фильтры</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Интеграция с 1C, CRM и телефонией</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Максимальный трастовый балл для поисковиков</li>
+                    </ul>
+                    <a href="#modal" class="btn btn-ghost tariff-btn js-open-modal" data-type="multipage" data-budget="other">Выбрать тариф</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-tag">FAQ</span>
+                    <h2>Вопросы о многостраничных сайтах</h2>
+                </div>
+                <p>Разбираем частые вопросы заказчиков перед стартом масштабного проекта.</p>
+            </div>
+            <div class="faq">
+                <div class="faq-item open">
+                    <h3>
+                        <button type="button" class="faq-q" id="faq-q0" aria-expanded="true" aria-controls="faq-a0">
+                            <span>Сколько страниц входит в многостраничный сайт?</span>
+                            <span class="faq-ic" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="faq-a" id="faq-a0" role="region" aria-labelledby="faq-q0">
+                        <div>
+                            <p>В базовый тариф входит до 5 страниц (Главная, О компании, Услуги, Кейсы/Отзывы, Контакты). В тарифах «Бизнес» и «Премиум» создаем структуру из 10–25+ страниц с каталогом и блогом под ваши задачи.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+                            <span>Поможете ли вы составить правильную структуру страниц для SEO?</span>
+                            <span class="faq-ic" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+                        <div>
+                            <p>Да, мы изначально проектируем иерархию страниц и URL так, чтобы каждая услуга получила отдельную посадочную страницу для органического трафика из Яндекса и Google.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                            <span>Смогу ли я сам добавлять новые статьи и услуги?</span>
+                            <span class="faq-ic" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+                        <div>
+                            <p>Да, мы верстаем код по модульному принципу и передаем понятную инструкцию, либо подключаем легкую панель управления контентом.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                            <span>Каковы сроки разработки корпоративного сайта?</span>
+                            <span class="faq-ic" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+                        <div>
+                            <p>Создание корпоративного сайта занимает от 10 до 20 рабочих дней в зависимости от структуры, объема каталога и интеграций.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="cta">
+            <div class="cta-box">
+                <span class="cta-tag mono">— 10% на первый заказ</span>
+                <h2>Закажите корпоративный сайт со скидкой 10%</h2>
+                <p>Оставьте заявку — подготовим предварительную структуру разделов, рассчитаем точную смету и сроки.</p>
+                <a href="#modal" class="btn btn-primary btn-lg js-open-modal" data-type="multipage">Обсудить корпоративный сайт</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo"><span>Lev</span><span class="dim">Code</span><span class="bar"></span></a>
+                <p>Веб-студия полного цикла в России: проектирование, дизайн, вёрстка и SEO-продвижение сайтов для бизнеса.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <a href="../landing/index.html">Разработка лендингов</a>
+                    <a href="../multipage/index.html">Многостраничные сайты</a>
+                    <a href="../vizitka/index.html">Сайты-визитки</a>
+                    <a href="../redesign/index.html">Редизайн сайтов</a>
+                    <a href="../verstka/index.html">Вёрстка из Figma</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="../index.html#works">Работы</a>
+                    <a href="../index.html#cycle">Процесс</a>
+                    <a href="../index.html#stages">Этапы работы</a>
+                    <a href="#faq">Частые вопросы</a>
+                    <a href="#modal" class="js-open-modal">Обсудить проект</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 LevCode — разработка сайтов для бизнеса. Не является публичной офертой.</span>
+            <div class="footer-bottom-links">
+                <a href="../policy.html">Политика конфиденциальности</a>
+                <a href="../privacy.html">Согласие на обработку данных</a>
+                <a href="../cookie-policy.html">Политика файлов cookie</a>
+                <span>сайты, которые работают</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-container" data-lenis-prevent>
+            <button class="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+            <div class="modal-content">
+                <span class="section-tag">Связь</span>
+                <div class="modal-title" id="modalTitle">Обсудить проект и расчет стоимости</div>
+                <p class="modal-desc">Оставьте заявку, и мы свяжемся с вами в течение рабочего дня для консультации и расчета цены.</p>
+                <form class="modal-form" id="projectForm">
+                    <div class="form-group">
+                        <label for="f-name">Имя</label>
+                        <input type="text" id="f-name" name="name" placeholder="Как к вам обращаться" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-contact">Telegram или email</label>
+                        <input type="text" id="f-contact" name="contact" placeholder="@LevCode или LevCode@example.com" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-type">Тип проекта</label>
+                            <div class="select-wrapper">
+                                <select id="f-type" name="project-type" required>
+                                    <option value="landing">Лендинг</option>
+                                    <option value="multipage" selected>Многостраничный сайт</option>
+                                    <option value="business-card">Сайт-визитка</option>
+                                    <option value="redesign">Редизайн</option>
+                                    <option value="markup">Вёрстка с макета</option>
+                                    <option value="other">другое</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="f-budget">Ориентировочный бюджет</label>
+                            <div class="select-wrapper">
+                                <select id="f-budget" name="budget" required>
+                                    <option value="" disabled selected hidden>Укажите бюджет</option>
+                                    <option value="7500">до 7500 ₽</option>
+                                    <option value="7500-15000">от 7500 ₽ до 15000 ₽</option>
+                                    <option value="15000-30000">от 15000 ₽ до 30000 ₽</option>
+                                    <option value="other">другое/обсуждаемо</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-desc">Коротко о задаче</label>
+                        <textarea id="f-desc" name="description" placeholder="Коротко о задаче" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Отправить заявку</button>
+                    <p class="form-consent">
+                        Нажимая кнопку, вы даете согласие на обработку персональных данных в соответствии с <a href="../policy.html" target="_blank">Политикой конфиденциальности</a> и <a href="../privacy.html" target="_blank">Согласием на обработку</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="../assets/js/lenis.min.js"></script>
+    <script defer src="../assets/js/script.js"></script>
+    <script defer src="../assets/js/ogl.umd.js"></script>
+    <script defer src="../assets/js/siderays-vanilla.js"></script>
+</body>
+
+</html>

@@ -5,7 +5,7 @@ on:
     branches:
       - master
       - main
-  workflow_dispatch: # Позволяет запускать деплой вручную кнопкой в GitHub Actions
+  workflow_dispatch:
 
 jobs:
   deploy:
